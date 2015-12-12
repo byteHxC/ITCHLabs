@@ -6,7 +6,6 @@
 package itchlabs;
 
 import javax.swing.JTextField;
-import java.sql.*;
 
 /**
  *
@@ -19,17 +18,7 @@ public class Aulas extends javax.swing.JFrame {
      */
     public Aulas() {
         initComponents();
-        id_Aula();
-    }
-    public void id_Aula(){
-            try {
-            ResultSet rs = Principal.con.prepareStatement("select count(*) from aulas ").executeQuery();
-            while (rs.next()) {                
-                id.setText(""+(rs.getInt(1)+1));
-            }
-        }catch(SQLException e){
-            System.out.println(e.getMessage());
-        }
+        Principal.id.gi("aulas",ida);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,7 +30,7 @@ public class Aulas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        id = new javax.swing.JTextField();
+        ida = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         nom = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -51,6 +40,8 @@ public class Aulas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Id_Aula:");
+
+        ida.setEditable(false);
 
         jLabel2.setText("Nombre:");
 
@@ -85,7 +76,7 @@ public class Aulas extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addGap(23, 23, 23)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ida, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
@@ -95,7 +86,7 @@ public class Aulas extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -114,9 +105,9 @@ public class Aulas extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        JTextField [] campos ={id,nom,cap};
+        JTextField [] campos ={ida,nom,cap};
         Principal.is.InsertarDatos(Principal.con,Principal.is.CrearConsulta(campos,"Aulas", Principal.lc.rcol(Principal.con,"Aulas")));
-        id_Aula(); 
+        Principal.id.gi("aulas",ida);
         nom.setText("");
         cap.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -128,7 +119,7 @@ public class Aulas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField cap;
-    private javax.swing.JTextField id;
+    public static javax.swing.JTextField ida;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -45,7 +45,7 @@
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="id" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="ida" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="nom" min="-2" pref="164" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -61,7 +61,7 @@
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ida" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -86,7 +86,13 @@
         <Property name="text" type="java.lang.String" value="Id_Aula:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="id">
+    <Component class="javax.swing.JTextField" name="ida">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
