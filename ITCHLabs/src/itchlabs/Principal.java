@@ -5,6 +5,7 @@
  */
 package itchlabs;
 
+import Inserciones.*;
 import java.sql.Connection;
 
 /**
@@ -13,7 +14,10 @@ import java.sql.Connection;
  */
 public class Principal extends javax.swing.JFrame {
     static Connection con  ;
+    static ListaColumnas lc = new ListaColumnas() ;
+    static Insercion is = new Insercion();
     Materias mat ;
+    Alumnos alum;
     /**
      * Creates new form Principal
      */
@@ -51,6 +55,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Alumnos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -79,6 +88,12 @@ public class Principal extends javax.swing.JFrame {
         mat = new Materias();
         mat.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        alum = new Alumnos();
+        alum.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

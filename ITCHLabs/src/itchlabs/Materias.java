@@ -14,8 +14,6 @@ import javax.swing.JTextField;
  * @author kevindaniel
  */
 public class Materias extends javax.swing.JFrame {
-    ListaColumnas lc = new ListaColumnas() ;
-    Insercion is = new Insercion();
    /**
      * Creates new form Materias
      */
@@ -136,7 +134,7 @@ public class Materias extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JTextField [] campos ={id,nom,cre,hp,ht};
-        is.InsertarDatos(Principal.con,is.CrearConsulta(campos,"Materias", lc.rcol(Principal.con,"Materias")));
+        Principal.is.InsertarDatos(Principal.con,Principal.is.CrearConsulta(campos,"Materias", Principal.lc.rcol(Principal.con,"Materias")));
         id_materia(); 
         nom.setText("");
         cre.setText("");
