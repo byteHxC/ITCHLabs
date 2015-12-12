@@ -24,7 +24,6 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         con = Conexion.Conectar("labproyect","clave");
-        
     }
     
     /**
