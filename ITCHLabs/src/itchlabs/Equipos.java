@@ -21,18 +21,8 @@ public class Equipos extends javax.swing.JFrame {
      * Creates new form Equipos
      */
     public Equipos() {
-        initComponents();
-        id_Equipo();
-    }
-    public void id_Equipo (){
-        try {
-            ResultSet rs = Principal.con.prepareStatement("select count(*) from Equipos").executeQuery();
-            while (rs.next()) {                
-                ne.setText(""+(rs.getInt(1)+1));
-            }
-        }catch(SQLException e){
-            System.out.println(e.getMessage());
-        }
+       initComponents();
+       Principal.id.gi("Equipos",ne);
     }
     public void AgregarAulas(){
         try{
@@ -256,7 +246,7 @@ public class Equipos extends javax.swing.JFrame {
             f.setText("false");
         JTextField [] campos ={ne,mod,ns,f,au};
         Principal.is.InsertarDatos(Principal.con,Principal.is.CrearConsulta(campos,"Equipos", Principal.lc.rcol(Principal.con,"Equipos")));
-        id_Equipo(); 
+        Principal.id.gi("Equipos",ne);
         mod.setText("");
         ns.setText("");
         au.setText("");
