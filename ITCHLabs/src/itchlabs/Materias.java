@@ -18,17 +18,7 @@ public class Materias extends javax.swing.JFrame {
      */
     public Materias() {
         initComponents();
-        id_materia();
-    }
-    public void id_materia (){
-        try {
-            ResultSet rs = Principal.con.prepareStatement("select count(*) from materias").executeQuery();
-            while (rs.next()) {                
-                id.setText(""+(rs.getInt(1)+1));
-            }
-        }catch(SQLException e){
-            System.out.println(e.getMessage());
-        }
+        Principal.id.gi("materias",id);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -134,7 +124,7 @@ public class Materias extends javax.swing.JFrame {
         // TODO add your handling code here:
         JTextField [] campos ={id,nom,cre,hp,ht};
         Principal.is.InsertarDatos(Principal.con,Principal.is.CrearConsulta(campos,"Materias", Principal.lc.rcol(Principal.con,"Materias")));
-        id_materia(); 
+        Principal.id.gi("materias",id); 
         nom.setText("");
         cre.setText("");
         hp.setText("");
