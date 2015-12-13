@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  * @author kevindaniel
  */
 public class Principal extends javax.swing.JFrame {
-   public static Connection con  ;
+    public static Connection con  ;
     static ListaColumnas lc = new ListaColumnas() ;
     static Insercion is = new Insercion();
     static DefaultTableModel modelo; 
