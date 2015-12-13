@@ -19,7 +19,7 @@ public class Profesores extends javax.swing.JFrame {
      */
     public Profesores() {
         initComponents();
-        Principal.id.gi("Profesores",id);
+       
     }
 
     /**
@@ -125,17 +125,7 @@ public class Profesores extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        JTextField [] campos ={id,nom,ap,am,e};
-        //SOLO SE CAMBIA LO QUE ESTA ENTRE "" AHORITA DICE ALUMNOS EN ALGUN OTRO REGISTRO PUEDE DECIR MATERIAS O
-        // EL NOMBRE DE OTRA TABLA
-        Principal.is.InsertarDatos(Principal.is.CrearConsulta(campos,"Profesores", Principal.lc.rcol("Profesores")));
-        //BORRADO DE CAMPOS DEL JFRAME
-        Principal.id.gi("Profesores",id);
-        nom.setText("");
-        ap.setText("");
-        am.setText("");
-        e.setText("");
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

@@ -21,21 +21,9 @@ public class Equipos extends javax.swing.JFrame {
      * Creates new form Equipos
      */
     public Equipos() {
-       initComponents();
-       Principal.id.gi("Equipos",ne);
+       
     }
-    public void AgregarAulas(){
-        try{
-            ResultSet rs = Principal.con.prepareStatement("select * from aulas").executeQuery();
-            Principal.modelo = (DefaultTableModel) VisualizarAulas.getModel();
-            Principal.modelo.setRowCount(0);
-            while (rs.next()){
-                Principal.modelo.addRow(new Object[]{rs.getInt(1),rs.getString(2),rs.getInt(3)});
-            }
-        }catch(SQLException e){
-            System.out.println(e.getMessage());
-        }   
-    }
+   
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -227,34 +215,21 @@ public class Equipos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        AgregarAulas();
-        jDialog1.setVisible(true);
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        au.setText(""+VisualizarAulas.getValueAt(VisualizarAulas.getSelectedRow(),0));
-        jDialog1.dispose();
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        JTextField f = new JTextField();
-        if(s.isSelected())
-            f.setText("true");
-        if(n.isSelected())
-            f.setText("false");
-        JTextField [] campos ={ne,mod,ns,f,au};
-        Principal.is.InsertarDatos(Principal.is.CrearConsulta(campos,"Equipos", Principal.lc.rcol("Equipos")));
-        Principal.id.gi("Equipos",ne);
-        mod.setText("");
-        ns.setText("");
-        au.setText("");
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        jDialog1.dispose();
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
 

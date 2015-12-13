@@ -113,17 +113,7 @@ public class Alumnos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        //EL NOMBRE DE LOS JTEXTFIELD QUE ESTAN EN EL JFRAME
-        JTextField [] campos ={no_control,nom,ap,am};
-        //SOLO SE CAMBIA LO QUE ESTA ENTRE "" AHORITA DICE ALUMNOS EN ALGUN OTRO REGISTRO PUEDE DECIR MATERIAS O
-        // EL NOMBRE DE OTRA TABLA
-        Principal.is.InsertarDatos(Principal.is.CrearConsulta(campos,"Alumnos", Principal.lc.rcol("Alumnos")));
-        //BORRADO DE CAMPOS DEL JFRAME
-        nom.setText("");
-        no_control.setText("");
-        ap.setText("");
-        am.setText("");
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

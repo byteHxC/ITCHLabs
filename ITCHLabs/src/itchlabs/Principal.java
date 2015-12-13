@@ -5,9 +5,9 @@
  */
 package itchlabs;
 
-import Inserciones.*;
+
 import java.sql.Connection;
-import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -15,10 +15,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Principal extends javax.swing.JFrame {
     public static Connection con  ;
-    static ListaColumnas lc = new ListaColumnas() ;
-    static Insercion is = new Insercion();
-    static DefaultTableModel modelo; 
-    static ID id = new ID();
     Materias mat ;
     Alumnos alum;
     Aulas au;
@@ -30,7 +26,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        con = Conexion.Conectar("labproyect","clave");
+        //con = Conexion.Conectar("labproyect","clave");
+        con = Conexion.conexion("labproyect", "postgres","12345");
     }
     
     /**

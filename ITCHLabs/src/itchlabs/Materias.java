@@ -5,8 +5,7 @@
  */
 package itchlabs;
 
-import java.sql.*;
-import javax.swing.JTextField;
+
 
 /**
  *
@@ -18,7 +17,6 @@ public class Materias extends javax.swing.JFrame {
      */
     public Materias() {
         initComponents();
-        Principal.id.gi("materias",id);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -122,13 +120,7 @@ public class Materias extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        JTextField [] campos ={id,nom,cre,hp,ht};
-        Principal.is.InsertarDatos(Principal.is.CrearConsulta(campos,"Materias", Principal.lc.rcol("Materias")));
-        Principal.id.gi("materias",id); 
-        nom.setText("");
-        cre.setText("");
-        hp.setText("");
-        ht.setText("");
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
