@@ -14,11 +14,11 @@ import javax.swing.table.DefaultTableModel;
  * @author kevindaniel
  */
 public class Principal extends javax.swing.JFrame {
-    static Connection con  ;
+   public static Connection con  ;
     static ListaColumnas lc = new ListaColumnas() ;
     static Insercion is = new Insercion();
     static DefaultTableModel modelo; 
-    static ID id;
+    static ID id = new ID();
     Materias mat ;
     Alumnos alum;
     Aulas au;
@@ -31,7 +31,6 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         con = Conexion.Conectar("labproyect","clave");
-        id = new ID(con);
     }
     
     /**

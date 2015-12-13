@@ -245,7 +245,7 @@ public class Equipos extends javax.swing.JFrame {
         if(n.isSelected())
             f.setText("false");
         JTextField [] campos ={ne,mod,ns,f,au};
-        Principal.is.InsertarDatos(Principal.con,Principal.is.CrearConsulta(campos,"Equipos", Principal.lc.rcol(Principal.con,"Equipos")));
+        Principal.is.InsertarDatos(Principal.is.CrearConsulta(campos,"Equipos", Principal.lc.rcol("Equipos")));
         Principal.id.gi("Equipos",ne);
         mod.setText("");
         ns.setText("");

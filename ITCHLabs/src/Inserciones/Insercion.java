@@ -5,6 +5,7 @@
  */
 package Inserciones;
 
+import itchlabs.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,10 +42,10 @@ public class Insercion {
         }        
         return sql;
     }
-        public void InsertarDatos(Connection con,String sql){
+        public void InsertarDatos(String sql){
           try {
             System.out.println(sql);
-            Statement st=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            Statement st=Principal.con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             st.executeUpdate(sql);
             JOptionPane.showMessageDialog(null, "DATO AGREGADO");
           } catch (SQLException ex) {

@@ -5,6 +5,7 @@
  */
 package Inserciones;
 
+import itchlabs.Principal;
 import java.sql.*;
 import javax.swing.JTextField;
 
@@ -13,14 +14,10 @@ import javax.swing.JTextField;
  * @author kevindaniel
  */
 public class ID {
-    private Connection con;
 
-    public ID(Connection con) {
-        this.con = con;
-    }
     public void gi(String tabla,JTextField txt){
            try {
-            ResultSet rs = con.prepareStatement("select count(*) from "+tabla).executeQuery();
+            ResultSet rs = Principal.con.prepareStatement("select count(*) from "+tabla).executeQuery();
             while (rs.next()) {                
                 txt.setText(""+(rs.getInt(1)+1));
             }

@@ -118,7 +118,7 @@ public class Alumnos extends javax.swing.JFrame {
         JTextField [] campos ={no_control,nom,ap,am};
         //SOLO SE CAMBIA LO QUE ESTA ENTRE "" AHORITA DICE ALUMNOS EN ALGUN OTRO REGISTRO PUEDE DECIR MATERIAS O
         // EL NOMBRE DE OTRA TABLA
-        Principal.is.InsertarDatos(Principal.con,Principal.is.CrearConsulta(campos,"Alumnos", Principal.lc.rcol(Principal.con,"Alumnos")));
+        Principal.is.InsertarDatos(Principal.is.CrearConsulta(campos,"Alumnos", Principal.lc.rcol("Alumnos")));
         //BORRADO DE CAMPOS DEL JFRAME
         nom.setText("");
         no_control.setText("");

@@ -5,6 +5,7 @@
  */
 package Inserciones;
 
+import itchlabs.Principal;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -15,9 +16,9 @@ import java.util.ArrayList;
 public class ListaColumnas {
     private ArrayList<Columna>Columnas= new ArrayList();
     
-    public ArrayList<Columna> rcol (Connection con,String tabla){
+    public ArrayList<Columna> rcol (String tabla){
          try{
-           ResultSet rs = con.prepareStatement("select cname,coltype from col where tname = "+"'"+tabla.toUpperCase()+"'").executeQuery();
+           ResultSet rs = Principal.con.prepareStatement("select cname,coltype from col where tname = "+"'"+tabla.toUpperCase()+"'").executeQuery();
            Columnas.removeAll(Columnas);
            while (rs.next()){
            Columnas.add(new Columna(rs.getString(1),rs.getString(2)));

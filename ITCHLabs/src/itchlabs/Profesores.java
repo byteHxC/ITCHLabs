@@ -129,7 +129,7 @@ public class Profesores extends javax.swing.JFrame {
         JTextField [] campos ={id,nom,ap,am,e};
         //SOLO SE CAMBIA LO QUE ESTA ENTRE "" AHORITA DICE ALUMNOS EN ALGUN OTRO REGISTRO PUEDE DECIR MATERIAS O
         // EL NOMBRE DE OTRA TABLA
-        Principal.is.InsertarDatos(Principal.con,Principal.is.CrearConsulta(campos,"Profesores", Principal.lc.rcol(Principal.con,"Profesores")));
+        Principal.is.InsertarDatos(Principal.is.CrearConsulta(campos,"Profesores", Principal.lc.rcol("Profesores")));
         //BORRADO DE CAMPOS DEL JFRAME
         Principal.id.gi("Profesores",id);
         nom.setText("");

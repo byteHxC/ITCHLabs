@@ -123,7 +123,7 @@ public class Materias extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JTextField [] campos ={id,nom,cre,hp,ht};
-        Principal.is.InsertarDatos(Principal.con,Principal.is.CrearConsulta(campos,"Materias", Principal.lc.rcol(Principal.con,"Materias")));
+        Principal.is.InsertarDatos(Principal.is.CrearConsulta(campos,"Materias", Principal.lc.rcol("Materias")));
         Principal.id.gi("materias",id); 
         nom.setText("");
         cre.setText("");
